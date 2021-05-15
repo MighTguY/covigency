@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Hugo 0.83.1" />
+  <title>Checkout example · Bootstrap v5.0</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Favicons -->
+
+  <meta name="theme-color" content="#7952b3" />
+</head>
+
+<body class="bg-light">
+  <div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" alt="" width="72" height="57"  src="../assets/CV128.png"/>
+        <h2>Covigency Vaccination Auto Slot Submission form</h2>
+        <p class="lead">
+          Please enter the below details, the plugin requires them to make a
+          better slot selection.
+        </p>
+      </div>
+
+      <div class="row g-5">
+        <h4 class="mb-3">Form Details</h4>
+        <form class="needs-validation" novalidate id="covigencyForm">
+          <input id="submit-hidden" type="submit" style="display: none" />
+          <div class="row g-3">
+
+            <div class="col-md-5">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="district" class="form-label">District</label>
+              <select class="form-select" id="district" required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid district.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="pincode" class="form-label">Pincode</label>
+              <input type="number" class="form-control" id="pincode" placeholder="" required />
+              <div class="invalid-feedback">Pincode code required.</div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" pattern="[1-9]{1}[0-9]{9}" placeholder="9999999999"
+                required />
+              <div class="invalid-feedback">
+                Please enter your valid 10 digit phone number
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="username" class="form-label">Name</label>
+              <input type="text" class="form-control" id="username" placeholder="Username" required />
+              <div class="invalid-feedback">Valid name is required.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="centers" class="form-label">Centers</label>
+              <select class="form-select" multiple aria-label="multiple select example" id="centers">
+                <option value="">Select prefered centers</option>
+              </select>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+          </div>
+
+          <hr class="my-4" />
+          <h4 class="mb-3">Age group</h4>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" checked id="age_18" />
+            <label class="form-check-label" for="age_18">Apply for 18-45 year old people</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="age_45" />
+            <label class="form-check-label" for="age_45">Apply for 45+ year old people</label>
+          </div>
+
+          <hr class="my-4" />
+
+          <h4 class="mb-3">Other filters</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="paid_vaccine" />
+              <label class="form-check-label" for="paid_vaccine">Paid Vaccination</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="book_any" />
+              <label class="form-check-label" for="book_any">Book for any center</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="today_exclude" />
+              <label class="form-check-label" for="today_exclude">Exclude today</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="time_slot_1" />
+              <label class="form-check-label" for="time_slot_1">Time slot: [9 AM - 11 AM]</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="time_slot_2" />
+              <label class="form-check-label" for="time_slot_2">Time slot: [11 AM - 1 PM]</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="time_slot_3" />
+              <label class="form-check-label" for="time_slot_3">Time slot: [1 PM - 3 PM]</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="time_slot_4" />
+              <label class="form-check-label" for="time_slot_4">Time slot: [3 PM - 5 PM]</label>
+            </div>
+          </div>
+
+          <hr class="my-4" />
+
+          <button class="w-100 btn btn-primary btn-lg" id="submit">
+            Continue to save
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2021 Covigency</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap-autocomplete.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/state.js"></script>
+  <script src="../js/form-validation.js"></script>
+</body>
+
+</html>

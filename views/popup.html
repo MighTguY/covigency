@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#563d7c" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+  </head>
+
+  <body class="d-flex flex-column h-100 mww">
+    <!-- Header with Logo-->
+    <header>
+      <nav
+        class="
+          navbar navbar-expand-md navbar-dark
+          bg-dark
+          mb-3
+          fixed-top
+          text-center
+          shadow
+          p-3
+          mb-5
+          rounded
+        "
+      >
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex">
+            <strong class="text-primary"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-eyedropper"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z"
+                />
+              </svg>
+              Covigency: Vaccine Finder App
+            </strong>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Divider-->
+    <hr />
+
+    <main class="flex-shrink-0"></main>
+    <div class="album py-5 bg-light">
+      <!-- Divider-->
+      <hr />
+
+      <!-- Quick Settings-->
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <strong>Quick Settings</strong>
+          </div>
+          <div class="col">
+            <a href="#" id="createForm">
+              <span class="text-primary"> All Settings</span>
+            </a>
+            <svg
+              width="11"
+              height="12"
+              viewBox="0 0 11 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 1H2.5C1.39543 1 0.5 1.89543 0.5 3V9C0.5 10.1046 1.39543 11 2.5 11H8.5C9.60457 11 10.5 10.1046 10.5 9V7.5M5.5 6L10.5 1M10.5 1H6.5M10.5 1V5"
+                stroke="#4A6EE0"
+                stroke-linecap="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Detailed Info-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row text-center mb-4">
+              <div class="col">
+                <strong>Enable Extension</strong>
+              </div>
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-toggle active"
+                  data-toggle="button"
+                  aria-pressed="true"
+                  autocomplete="off"
+                  id="enableButton"
+                >
+                  <div class="handle"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row text-center mb-4">
+              <div class="col">
+                <strong>Enable Notification on Availability</strong>
+              </div>
+              <div class="col">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-toggle active"
+                  data-toggle="button"
+                  aria-pressed="true"
+                  autocomplete="off"
+                  id="enableNotification"
+                >
+                  <div class="handle"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm" id="general">
+              <div
+                class="card-header py-3 text-white bg-primary border-primary"
+              >
+                <h4 class="my-0 fw-normal">
+                  Welcome <span id="user">User</span>
+                </h4>
+              </div>
+              <div class="card-body" id="general_desc">
+                Please add your information, to make this plugin work...
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm" id="info_added">
+              <div
+                class="card-header py-3 text-white bg-primary border-primary"
+              >
+                <h4 class="my-0 fw-normal">Info Review</h4>
+              </div>
+              <div class="card-body">
+                <div class="row mb-2" id="mob_div">
+                  <div class="col">
+                    <label for="phone" class="col-sm-2 form-label"
+                      >Mobile :
+                    </label>
+                  </div>
+                  <div class="col">
+                    <input
+                      id="phone"
+                      type="text"
+                      class="form-control"
+                      disabled
+                      value="mobile number"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2" id="sta_div">
+                  <div class="col">
+                    <label for="state" class="col-sm-2 form-label"
+                      >State :
+                    </label>
+                  </div>
+                  <div class="col">
+                    <input
+                      id="state"
+                      type="text"
+                      class="form-control"
+                      disabled
+                      value="state"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2" id="dis_div">
+                  <div class="col">
+                    <label for="district" class="form-label">District : </label>
+                  </div>
+                  <div class="col">
+                    <input
+                      id="district"
+                      type="text"
+                      class="form-control"
+                      disabled
+                      value="district"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2" id="pin_div">
+                  <div class="col">
+                    <label for="pincode" class="form-label">Pincode : </label>
+                  </div>
+                  <div class="col">
+                    <input
+                      id="pincode"
+                      type="text"
+                      class="form-control"
+                      disabled
+                      value="pincode"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="centers" class="form-label"
+                      >Prefered Centers</label
+                    >
+                  </div>
+                  <div class="col">
+                    <div class="bd-example d-md-flex">
+                      <div
+                        id="centers"
+                        class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light"
+                        style="max-width: 260px; max-height: 100px"
+                      >
+                        Prefered centers list
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="c_p_centers" class="form-label"
+                      >Book any center</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="c_p_centers"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="age_18" class="form-label">Age 18-45</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="age_18"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="age_45" class="form-label">Age 45+</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="age_45"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="paid_ce" class="form-label"
+                      >Include paid center</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="paid_ce"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="time_slot_1" class="form-label"
+                      >Time slot [9AM - 11AM]</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="time_slot_1"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="time_slot_2" class="form-label"
+                      >Time slot [11AM - 1PM]</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="time_slot_2"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="time_slot_3" class="form-label"
+                      >Time slot [1PM - 3PM]</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="time_slot_3"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="time_slot_4" class="form-label"
+                      >Time slot [3PM - 5PM]</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="time_slot_4"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <div class="col">
+                    <label for="today_exclude" class="form-label"
+                      >Exclude today</label
+                    >
+                  </div>
+                  <div class="col">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="true"
+                      id="today_exclude"
+                      checked
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider-->
+    <hr />
+
+    <!--Footer -->
+    <footer class="footer bg-light fixed-bottom shadow p-3 bg-dark rounded">
+      <div class="container_own">
+        <div class="row text-center grid-divider">
+          <div class="col">
+            <strong class="text-primary">
+              <a href="#" id="linkedin">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-linkedin"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                  />
+                </svg>
+              </a>
+            </strong>
+          </div>
+          <div class="col">
+            <strong class="text-primary">
+              <a href="#" id="cowin_home">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-house-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+                  />
+                </svg>
+                Cowin
+              </a>
+            </strong>
+          </div>
+          <div class="col text-primary">
+            <a href="#" id="survey">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-link-45deg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"
+                />
+              </svg>
+              Survey
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/pop.js"></script>
+  </body>
+</html>
