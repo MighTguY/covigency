@@ -1,8 +1,15 @@
 # covigency
 Covigency Chrome plugin app
 
-Pin code search is in progress, Please use State and District, 
+## Please do read the instructions
+
+
+
+
+Note 
+- Pin code search is in progress, Please use State and District, 
 in case you want to revine the center nearby, You can select prefereed centers.
+-  Once you login refresh your page to activate it. 
 # How to Install
 
 The extension has been submitted to Google Chrome Developer Dashboard, But It can take time.
